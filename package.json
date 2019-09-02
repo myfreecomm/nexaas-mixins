@@ -1,0 +1,33 @@
+{
+  "name": "@nexaas/mixins",
+  "version": "1.0.0-alpha.1.0.0",
+  "description": "DOM features encapsulation library",
+  "main": "src/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build:watch": "webpack -w --mode development",
+    "build:prod": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myfreecomm/nexaas-mixins.git"
+  },
+  "keywords": [
+    "mixins"
+  ],
+  "author": "Max Salles <max.salles@nexaas.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/myfreecomm/nexaas-mixins/issues"
+  },
+  "homepage": "https://github.com/myfreecomm/nexaas-mixins#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
+  }
+}
