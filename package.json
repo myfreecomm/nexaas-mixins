@@ -11,7 +11,8 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
     "build:watch": "webpack -w --mode development",
-    "build:prod": "webpack --mode production"
+    "build:prod": "webpack --mode production",
+    "docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose"
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,8 @@
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "jest": "^24.9.0",
+    "jsdoc": "^3.6.3",
+    "minami": "^1.2.3",
     "standard": "^14.1.0",
     "standard-loader": "^7.0.0",
     "webpack": "^4.39.3",
