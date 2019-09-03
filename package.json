@@ -7,6 +7,9 @@
     "test": "test"
   },
   "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --colors",
     "build:watch": "webpack -w --mode development",
     "build:prod": "webpack --mode production"
   },
@@ -22,11 +25,18 @@
   "bugs": {
     "url": "https://github.com/myfreecomm/nexaas-mixins/issues"
   },
+  "jest": {
+    "transform": {
+      ".*": "<rootDir>/node_modules/babel-jest"
+    }
+  },
   "homepage": "https://github.com/myfreecomm/nexaas-mixins#readme",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
+    "jest": "^24.9.0",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.7"
   }
