@@ -10,6 +10,7 @@ describe('dasherize', () => {
     expect(dasherize('AAABbb')).toBe('aaa-bbb')
     expect(dasherize('AAABBb')).toBe('aaab-bb')
     expect(dasherize('AAABBB')).toBe('aaabbb')
+    expect(dasherize('AAA_BBB')).toBe('aaa-bbb')
     expect(dasherize('-_-Aa_ABB-b_-_')).toBe('aa-abb-b')
   })
 })

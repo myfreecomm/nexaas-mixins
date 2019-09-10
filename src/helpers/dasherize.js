@@ -11,10 +11,12 @@ export default function dasherize (str) {
       if (isDash(str)) return '-'
 
       if (isUpperCase(str) && arr.length !== 1) {
+        const lastIndex = str.length - 1
+
         const str1 = i !== 0 && !isDash(arr[i - 1]) ? '-' : ''
-        const str2 = str.substring(0, str.length - 1)
-        const str3 = str.length === 1 || isDash(arr[i + 1]) ? '' : '-'
-        const str4 = str.charAt(str.length - 1)
+        const str2 = str.substring(0, lastIndex)
+        const str3 = str.length === 1 || i === lastIndex || isDash(arr[i + 1]) ? '' : '-'
+        const str4 = str.charAt(lastIndex)
 
         return (str1 + str2 + str3 + str4).toLowerCase()
       }
