@@ -1,7 +1,7 @@
 import getMixinAttributeName from '../../src/mixin/getMixinAttributeName'
 
 describe('getMixinAttributeName', () => {
-  it('...', () => {
+  it('generates mixin DOM element attribute name', () => {
     expect(getMixinAttributeName('aaaBbb')).toBe('mx-aaa-bbb')
     expect(getMixinAttributeName('AaaBbb')).toBe('mx-aaa-bbb')
     expect(getMixinAttributeName('aAABbb')).toBe('mx-a-aa-bbb')
