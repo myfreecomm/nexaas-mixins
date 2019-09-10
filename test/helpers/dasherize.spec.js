@@ -1,7 +1,7 @@
 import dasherize from '../../src/helpers/dasherize'
 
 describe('dasherize', () => {
-  it('returns dash case "str"', () => {
+  it('shuld return dash case "str"', () => {
     expect(dasherize('aaabbb')).toBe('aaabbb')
     expect(dasherize('aaaBbb')).toBe('aaa-bbb')
     expect(dasherize('AaaBbb')).toBe('aaa-bbb')
