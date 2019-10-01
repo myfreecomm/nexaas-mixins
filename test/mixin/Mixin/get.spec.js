@@ -1,5 +1,5 @@
-import Mixin from '../../src/mixin/Mixin'
-import store from '../../src/mixin/store'
+import Mixin from '../../../src/mixin/Mixin'
+import store from '../../../src/mixin/store'
 
 describe('Mixin.remove', () => {
   afterAll(() => document.body.innerHTML = '')

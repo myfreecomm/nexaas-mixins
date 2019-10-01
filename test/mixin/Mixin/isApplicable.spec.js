@@ -1,4 +1,4 @@
-import Mixin from '../../src/mixin/Mixin'
+import Mixin from '../../../src/mixin/Mixin'
 
 describe('Mixin.isApplicable', () => {
   afterEach(() => document.body.innerHTML = '')

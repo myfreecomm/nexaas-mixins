@@ -1,4 +1,4 @@
-import Mixin from '../../src/mixin/Mixin'
+import Mixin from '../../../src/mixin/Mixin'
 
 describe('Mixin#element', () => {
   it('returns "element"', () => {

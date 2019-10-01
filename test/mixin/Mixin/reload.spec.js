@@ -1,8 +1,8 @@
-jest.mock('../../src/mixin/attachMixinToElement')
+jest.mock('../../../src/mixin/attachMixinToElement')
 
-import Mixin from '../../src/mixin/Mixin'
-import attachMixinToElement from '../../src/mixin/attachMixinToElement'
-import store from '../../src/mixin/store'
+import Mixin from '../../../src/mixin/Mixin'
+import attachMixinToElement from '../../../src/mixin/attachMixinToElement'
+import store from '../../../src/mixin/store'
 
 describe('Mixin.reload', () => {
   beforeEach(() => attachMixinToElement.mockClear())

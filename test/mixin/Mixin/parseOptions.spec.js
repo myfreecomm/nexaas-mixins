@@ -1,4 +1,4 @@
-import Mixin from '../../src/mixin/Mixin'
+import Mixin from '../../../src/mixin/Mixin'
 
 describe('Mixin.parseOptions', () => {
   afterEach(() => document.body.innerHTML = '')
