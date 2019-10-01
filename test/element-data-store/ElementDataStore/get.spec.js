@@ -1,4 +1,4 @@
-import ElementDataStore from '../../src/element-data-store/ElementDataStore'
+import ElementDataStore from '../../../src/element-data-store/ElementDataStore'
 
 describe('ElementDataStore#get', () => {
   afterEach(() => {

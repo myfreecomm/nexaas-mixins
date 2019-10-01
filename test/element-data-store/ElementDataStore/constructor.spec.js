@@ -1,6 +1,6 @@
-import ElementDataStore from '../../src/element-data-store/ElementDataStore'
+import ElementDataStore from '../../../src/element-data-store/ElementDataStore'
 
-describe('ElementDataStore', () => {
+describe('ElementDataStore.constructor', () => {
   test('should define a "_store" property as a "Map"', () => {
     const store = new ElementDataStore()
 
