@@ -1,9 +1,16 @@
-export default function* children (element) {
-  let nextSibling = element.nextSibling()
+export default function children (element) {
+  let current = element
 
-  while (nextSibling) {
-    yield nextSibling
+  return {
+    next: () => {
+      current = current !== element
+        ? current.nextElementSibling
+        : element.firstElementChild
 
-    nextSibling = nextSibling.nextSibling()
+      return current
+        ? { value: current, done: false }
+        : { done: true }
+    },
+    [Symbol.iterator]: function () { return this }
   }
 }
