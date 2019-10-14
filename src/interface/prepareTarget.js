@@ -1,4 +1,4 @@
-import interfacePropName from './interfaceAuxPropName'
+import interfacePropName from './interfacePropName'
 
 export default function prepareTarget (target) {
   if (interfacePropName in target) return

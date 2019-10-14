@@ -1,7 +1,7 @@
 import prepareTarget from './prepareTarget'
 import interfacePropName from './interfacePropName'
 
-export default function assignInterface (target, interface) {
+export default function assignInterface (target, Interface) {
   prepareTarget(target)
-  target[interfacePropName].push(interface)
+  target[interfacePropName].push(Interface)
 }
