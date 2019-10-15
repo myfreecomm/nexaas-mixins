@@ -1,8 +1,8 @@
 import interfacePropName from './interfacePropName'
 
-export default function hasInterface (target, interface) {
+export default function hasInterface (target, Interface) {
   if (interfacePropName in target) {
-    return target[interfacePropName].includes(interface)
+    return target[interfacePropName].includes(Interface)
   }
 
   return false
