@@ -6,4 +6,6 @@ export default function copyOwnProperties (target, ...sources) {
       if (descriptor) Object.defineProperty(target, prop, descriptor)
     }
   }
+
+  return target
 }

@@ -4,7 +4,12 @@ import hasInterface from './hasInterface'
 
 export default class Interface {
   constructor (props, ...dependencies) {
-    this._props = props
+    this._props = copyOwnProperties(
+      {},
+      props,
+      ...dependencies.map(dependency => dependency.props)
+    )
+
     this._dependencies = dependencies
   }
 
@@ -13,10 +18,6 @@ export default class Interface {
 
     copyOwnProperties(target, this._props, overwrites)
     assignInterface(target, this)
-
-    for (const dependency of this._dependencies) {
-      dependency.apply(target)
-    }
 
     return target
   }
@@ -31,7 +32,7 @@ export default class Interface {
   }
 
   get props () {
-    return Object.assign({}, this._props, ...this._dependencies)
+    return copyOwnProperties({}, this._props)
   }
 
   get dependencies () {
