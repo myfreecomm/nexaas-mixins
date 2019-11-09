@@ -1,11 +1,30 @@
 import Interface from '../../../src/interface/Interface'
+import copyOwnProperties from '../../../src/interface/copyOwnProperties'
+
+jest.mock('../../../src/interface/copyOwnProperties')
 
 describe('Interface.constructor', () => {
-  it('assigns "_props" property with "props"', () => {
-    const props = { prop: () => {} }
-    const SomeInterface = new Interface(props)
+  beforeEach(() => {
+    copyOwnProperties.mockClear()
+  })
 
-    expect(SomeInterface._props).toBe(props)
+  it('assigns "_props" copy of "props" and dependency properties', () => {
+    const copiedProperties = {}
+    const props = {}
+    const dependency = { props: {} }
+    const otherDependency = { props: {} }
+
+    copyOwnProperties.mockReturnValue(copiedProperties)
+
+    const SomeInterface = new Interface(props, dependency, otherDependency)
+
+    expect(copyOwnProperties).toBeCalledWith(
+      expect.objectContaining({}),
+      props,
+      dependency.props,
+      otherDependency.props
+    )
+    expect(SomeInterface._props).toBe(copiedProperties)
   })
 
   it('assigns "_depencencies" property with "...dependencies"', () => {
