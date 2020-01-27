@@ -1,4 +1,4 @@
-import { parseDataString, camelize } from '../helpers'
+import { parseDataString } from '../helpers'
 
 import getMixinAttributeName from './getMixinAttributeName'
 import attachMixinToElement from './attachMixinToElement'
