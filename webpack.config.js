@@ -7,7 +7,7 @@ module.exports = {
 
   output: {
     path: path.resolve('dist'),
-    filename: 'mixin.min.js'  
+    filename: 'mixin.min.js'
   },
 
   module: {
@@ -25,10 +25,10 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         include: /src/,
-        use: {  
-          loader: 'babel-loader',  
-          options: {  
-            cacheDirectory: true  
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true
           }
         }
       }
