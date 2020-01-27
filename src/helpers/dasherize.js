@@ -1,4 +1,4 @@
-const separatorRgx = /[A-Z]+|[\-|\_]+|[[a-z]|\d]+/g
+const separatorRgx = /[A-Z]+|[-|_]+|[[a-z]|\d]+/g
 const isDash = str => ['-', '_'].includes(str.charAt(0))
 const isUpperCase = str => str === str.toUpperCase()
 const edgeDasheRemover = (str, i, arr) => !isDash(str) || (i !== 0 && i !== arr.length - 1)
