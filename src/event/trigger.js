@@ -10,10 +10,10 @@ export default function trigger (type, data, thisObject) {
     const areTheSame = registered === type
     const isContext = (
       registered.substring(0, type.length) === type &&
-      registered.charAt(type.length) === '.'
+      type.charAt(type.length - 1) === '.'
     )
 
-    if (hasEqualLenght && areTheSame || isContext) {
+    if ((hasEqualLenght && areTheSame) || isContext) {
       callbacks = callbacks.concat(this[eventPropName][registered])
     }
   }

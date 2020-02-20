@@ -44,7 +44,7 @@ describe('trigger', () => {
       }
     }
 
-    trigger.call(object, type)
+    trigger.call(object, `${type}.`)
 
     expect(callback).toBeCalled()
     expect(otherCallback).toBeCalledTimes(2)
