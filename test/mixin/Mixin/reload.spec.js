@@ -13,22 +13,22 @@ describe('Mixin.reload', () => {
 
     const instance = { undo: jest.fn() }
     const element = document.querySelector('input')
-    const customOptions = {}
+    const options = {}
 
     store.set(element, Mixin.name, instance)
 
-    expect(Mixin.reload(element, customOptions)).toBe(Mixin)
+    expect(Mixin.reload(element, options)).toBe(Mixin)
     expect(instance.undo).toBeCalled()
-    expect(attachMixinToElement).toBeCalledWith(element, customOptions, Mixin, Mixin.name, store)
+    expect(attachMixinToElement).toBeCalledWith(element, options, Mixin, Mixin.name, store)
   })
 
   it('doesn`t call "attachMixinToElement" if there isn`t already instance for this mixin associated with the "element"', () => {
     document.body.innerHTML = '<input>'
 
     const element = document.querySelector('input')
-    const customOptions = {}
+    const options = {}
 
-    expect(Mixin.reload(element, customOptions)).toBe(Mixin)
+    expect(Mixin.reload(element, options)).toBe(Mixin)
     expect(attachMixinToElement).not.toBeCalled()
   })
 })
