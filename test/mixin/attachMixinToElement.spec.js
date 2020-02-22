@@ -16,18 +16,21 @@ describe('attachMixinToElement', () => {
     expect(execute).toBeCalled()
   })
 
-  it('instantiates "Mixin" with "element" attribute options with "customOptions" is "undefined"', () => {
+  it('instantiates "Mixin" with "element" attribute options when "customOptions" is "undefined"', () => {
     const element = {}
     const customOptions = undefined
+    const unparsedOptions = '{}'
     const parsedOptions = {}
     const Mixin = jest.fn(function () { this.execute = () => {} })
     const key = 'someKey'
     const store = { set: () => {} }
 
+    Mixin.getUnparsedOptions = jest.fn().mockReturnValue(unparsedOptions)
     Mixin.parseOptions = jest.fn().mockReturnValue(parsedOptions)
     attachMixinToElement(element, customOptions, Mixin, key, store)
 
-    expect(Mixin.parseOptions).toBeCalledWith(element)
+    expect(Mixin.getUnparsedOptions).toBeCalledWith(element)
+    expect(Mixin.parseOptions).toBeCalledWith(unparsedOptions)
     expect(Mixin).toBeCalledWith(element, parsedOptions)
   })
 })
