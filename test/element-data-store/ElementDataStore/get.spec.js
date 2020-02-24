@@ -1,13 +1,10 @@
 import ElementDataStore from '../../../src/element-data-store/ElementDataStore'
 
 describe('ElementDataStore#get', () => {
-  afterEach(() => {
-    document.body.innerHTML = ''
-  })
+  beforeEach(() => document.body.innerHTML = '<div></div>')
+  afterEach(() => document.body.innerHTML = '')
 
-  test('should return data associated with the "element" "key"', () => {
-    document.body.innerHTML = '<div></div>'
-
+  it('returns data associated with the "element" "key"', () => {
     const store = new ElementDataStore()
     const element = document.querySelector('div')
     const key = 'someKey'
@@ -18,9 +15,7 @@ describe('ElementDataStore#get', () => {
     expect(store.get(element, key)).toBe(data)
   })
 
-  test('should return "undefined" when "element" has no data for the "key"', () => {
-    document.body.innerHTML = '<div></div>'
-
+  it('returns "undefined" if "element" has no data for the "key"', () => {
     const store = new ElementDataStore()
     const element = document.querySelector('div')
     const key = 'someKey'

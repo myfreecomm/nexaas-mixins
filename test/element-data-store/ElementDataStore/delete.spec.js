@@ -1,13 +1,10 @@
 import ElementDataStore from '../../../src/element-data-store/ElementDataStore'
 
 describe('ElementDataStore#delete', () => {
-  afterEach(() => {
-    document.body.innerHTML = ''
-  })
+  beforeEach(() => document.body.innerHTML = '<div></div>')
+  afterEach(() => document.body.innerHTML = '')
 
-  test('if the "key" has the "data", delete it and return "true"', () => {
-    document.body.innerHTML = '<div></div>'
-
+  it('deletes the "key" and returns "true" if "key" has the "data", ', () => {
     const store = new ElementDataStore()
     const element = document.querySelector('div')
     const key = 'someKey'
@@ -19,9 +16,7 @@ describe('ElementDataStore#delete', () => {
     expect(store._store.get(element)).toEqual({})
   })
 
-  test('if the "key" doesn`t has the "data", return "false"', () => {
-    document.body.innerHTML = '<div></div>'
-
+  it('returns "false" if the "key" doesn`t has the "data"', () => {
     const store = new ElementDataStore()
     const element = document.querySelector('div')
     const key = 'someKey'
@@ -33,29 +28,31 @@ describe('ElementDataStore#delete', () => {
     expect(store._store.get(element)).toEqual({ otherKey: data })
   })
 
-  test('should delete all "element" keys when a "key" isn`t specified and return "true"', () => {
-    document.body.innerHTML = '<div></div>'
+  describe('when a "key" isn`t specified', () => {
+    it('deletes all "element" keys and return "true"', () => {
+      const store = new ElementDataStore()
+      const element = document.querySelector('div')
+      const data = {}
 
-    const store = new ElementDataStore()
-    const element = document.querySelector('div')
-    const data = {}
+      store._store.set(element, { someKey: data })
 
-    store._store.set(element, { someKey: data })
-
-    expect(store.delete(element)).toBeTruthy()
-    expect(store._store.get(element)).toBeUndefined()
+      expect(store.delete(element)).toBeTruthy()
+      expect(store._store.get(element)).toBeUndefined()
+    })
   })
 
-  test('should return "false" when "element" isn`t registered', () => {
-    document.body.innerHTML = '<div></div><p></p>'
+  describe('when "element" isn`t registered', () => {
+    beforeEach(() => document.body.innerHTML = '<div></div><p></p>')
 
-    const store = new ElementDataStore()
-    const element = document.querySelector('div')
-    const otherElement = document.querySelector('p')
-    const data = {}
+    it('returns "false" ', () => {
+      const store = new ElementDataStore()
+      const element = document.querySelector('div')
+      const otherElement = document.querySelector('p')
+      const data = {}
 
-    store._store.set(element, { someKey: data })
+      store._store.set(element, { someKey: data })
 
-    expect(store.delete(otherElement)).toBeFalsy()
+      expect(store.delete(otherElement)).toBeFalsy()
+    })
   })
 })
