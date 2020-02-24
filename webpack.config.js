@@ -3,11 +3,14 @@ const path = require('path')
 module.exports = {
   devtool: 'source-map',
 
-  entry: path.resolve('src', 'index'),
+  entry: path.resolve('mixin'),
 
   output: {
     path: path.resolve('dist'),
-    filename: 'mixin.min.js'
+    filename: 'mixin.min.js',
+    library: 'mixin',
+    libraryExport: 'default',
+    libraryTarget:  'var'
   },
 
   module: {
