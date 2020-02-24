@@ -2,7 +2,7 @@ import eventPropName from '../../src/event/eventPropName'
 import trigger from '../../src/event/trigger'
 
 describe('trigger', () => {
-  it('perform callbacks associated with event type', () => {
+  it('performs callbacks associated with event type', () => {
     const callback = jest.fn()
     const otherCallback = jest.fn()
     const anotherCallback = jest.fn()
@@ -21,7 +21,7 @@ describe('trigger', () => {
     expect(anotherCallback).not.toBeCalled()
   })
 
-  it('by default assigns object "this" to callback "this"', () => {
+  it('assigns object "this" to callback "this" by default', () => {
     const callback = jest.fn(function () { return this })
     const type = 'eventType'
     const object = { [eventPropName]: { [type]: [callback] } }
@@ -31,7 +31,7 @@ describe('trigger', () => {
     expect(callback).toReturnWith(object)
   })
 
-  it('perform callbacks associated with event type context', () => {
+  it('performs callbacks associated with event type context', () => {
     const callback = jest.fn()
     const otherCallback = jest.fn()
     const anotherCallback = jest.fn()
@@ -51,7 +51,7 @@ describe('trigger', () => {
     expect(anotherCallback).not.toBeCalled()
   })
 
-  it('pass the "data" as callback argument when there is "data" argument', () => {
+  it('passes the "data" as callback argument when there is "data" argument', () => {
     const data = {}
     const callback = jest.fn(data => data)
     const type = 'event'
