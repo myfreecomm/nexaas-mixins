@@ -1,5 +1,6 @@
-import Mixin, { mount } from './mixin'
+import Mixin from './mixin'
 import Interface from './interface'
+import Event from './event'
 
 export default Mixin
-export { mount, Interface }
+export { Interface, Event }
