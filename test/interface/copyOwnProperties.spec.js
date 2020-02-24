@@ -38,7 +38,7 @@ describe('copyOwnProperties', () => {
       }
 
       const descriptors = {
-        prop1: Object.getOwnPropertyDescriptor(target,  'prop1'),
+        prop1: Object.getOwnPropertyDescriptor(target, 'prop1'),
         prop2: Object.getOwnPropertyDescriptor(source1, 'prop2'),
         prop3: Object.getOwnPropertyDescriptor(source2, 'prop3'),
         prop4: Object.getOwnPropertyDescriptor(source2, 'prop4'),

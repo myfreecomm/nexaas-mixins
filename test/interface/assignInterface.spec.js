@@ -11,7 +11,7 @@ describe('assignInterface', () => {
   })
 
   describe('when "__implements__" property already exists', () => {
-    it('Adds "Interface"', () => {
+    it('adds "Interface"', () => {
       const ExistingInterface = {}
       const Interface = {}
       const target = { __implements__: [ExistingInterface] }
